@@ -63,7 +63,7 @@ p{
     border: 0.2px solid rgb(232, 232, 232);
     padding : 3rem 4rem;
     border-radius: 5px;
-    box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(255, 255, 255);
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(235, 233, 233);
     background-color: #fefdfd;
 }
 
@@ -114,7 +114,7 @@ p{
     }
     
     .challenges-list li {
-        padding : 3rem;
+        padding :3.5rem;
         margin: 4%;
     }
 
