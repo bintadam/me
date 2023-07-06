@@ -70,4 +70,9 @@ function displayTecnologies(){
 $(document).ready(function(){
    displayHobbies();
    displayTecnologies();
+   const challenge = $('#challenge')
+   challenge.on('mouseenter', function(e){
+    e.preventDefault()
+        challenge.css("backgroundColor", "rgb(168, 143, 143)")
+   })
 })
