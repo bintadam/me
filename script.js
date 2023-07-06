@@ -8,20 +8,20 @@ const hobbies  =[
 ]
 
 const tecnologies = [
-    "React",
-    "Redux",
-    "MONGODB",
-    "JAVASCRIPT",
-    "NODE",
-    "PYTHON",
-    "PANDAS",
-    "HTML",
-    "NUMPY",
+    { name: "React", color: "red" },
+    { name: "Redux", color: "blue" },
+    { name: "MONGODB", color: "green" },
+    { name: "JAVASCRIPT", color: "orange" },
+    { name: "NODE", color: "purple" },
+    { name: "PYTHON", color: "yellow" },
+    { name: "PANDAS", color: "pink" },
+    { name: "HTML", color: "cyan" },
+    { name: "NUMPY", color: "brown" },
 ]
 
 function displayHobbies(){
     const hobbiesList = $('#hobbiesList');
-    index = 0;
+    let index = 0;
 
     function changeHobby(){
         hobbiesList.fadeOut(400, function(){
@@ -43,7 +43,31 @@ function displayHobbies(){
 
 }
 
+function displayTecnologies(){
+    const tecnologiesList = $('#tecnologies');
+    let index =0;
+    function changeTecnologies(){
+        const tecnology = tecnologies[index]
+        tecnologiesList.fadeOut(400, function(){
+            tecnologiesList.text(tecnology.name);
+            tecnologiesList.css("color", tecnology.color)
+            tecnologiesList.fadeIn(400)
+        });
+
+        index++; 
+
+        if(index === tecnologies.length){
+            index = 0;
+        }
+    }
+
+    changeTecnologies()
+
+    setInterval(changeTecnologies, 2000)
+}
+
 
 $(document).ready(function(){
    displayHobbies();
+   displayTecnologies();
 })
