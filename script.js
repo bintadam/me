@@ -19,25 +19,31 @@ const tecnologies = [
     "NUMPY",
 ]
 
-function animateHobbies(){
-    let index = 0;
-    const container = $(".list");
+function displayHobbies(){
+    const hobbiesList = $('#hobbiesList');
+    index = 0;
 
-    function displayHobby(){
-        container.fadeOut(400, function(){
-            container.text(hobbies[index]);
+    function changeHobby(){
+        hobbiesList.fadeOut(400, function(){
+            hobbiesList.text(hobbies[index]);
+            hobbiesList.fadeIn(400)
         });
 
         index++;
+    
         if(index === hobbies.length){
-            index =0;
+            index = 0;
+        
         }
     }
 
-    displayHobby();
-    setInterval(displayHobby, 2000)
+    changeHobby();
+
+    setInterval(changeHobby, 2000);
+
 }
 
+
 $(document).ready(function(){
-    animateHobbies();
+   displayHobbies();
 })
